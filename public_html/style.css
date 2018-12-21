@@ -1,13 +1,118 @@
-
+body{
+    margin:0px;
+}
 .map {
-    height: 1200px;
+    height: 100%;
     width: 100%;
+    background-color: green;
 }
 .map{
     border: 2px solid #c8a88e;
     bottom: 2px;
-    left: 10;
-    min-width: 1024px;
+    left: 10px;
     position: absolute;
-    top: 0px;
+    top: 120px;
+}
+.layertree {
+    width: 20%;
+    height: calc(100% - 3.5em);
+    float: left;
+}
+.layertree .layertree-buttons {
+    height: 2em;
+    border-bottom: 1px solid grey;
+}
+.layertree .layercontainer {
+    position: relative;
+    height: calc(100% - 2em);
+    overflow-y: auto;
+}
+.layercontainer .layer {
+    position: relative;
+    height: 2em;
+}
+.layer span:first-of-type {
+    position: absolute;
+    left: 1.5em;
+    max-width: calc(100% - 1.5em);
+}
+#overlay{
+    background-color: white; 
+    border-radius: 10px; 
+    border: 1px solid black; 
+    padding: 5px 10px;
+}
+.ol-control button {
+    background-color: rgba(219,63,63,.5);
+}
+.ol-control button:focus {
+    background-color: rgba(219,63,63,.5);
+}
+.ol-control button:hover {
+    background-color: rgba(219,63,63,1);
+}
+.ol-scale-line {
+    background-color: rgba(219,63,63,.5);
+}
+.ol-overviewmap {
+    bottom: 2em;
+}
+.ol-mouse-position {
+    font-family: monospace;
+    color: white;
+    font-size: 2em
+}
+.ol-dragzoom {
+    background-color: rgba(219,63,63,.1);
+    border-width: 2px;
+    border-color: rgba(219,63,63,1);
+}
+.ol-zoomslider {
+    top: calc(1.875em + 6px);
+    left: calc(.5em + 12px);
+    width: 2px;
+}
+.ol-zoomslider-thumb {
+    background-color: rgba(219,63,63,.5);
+    left: -11px !important;
+}
+.ol-zoomslider-thumb:hover {
+    background-color: rgba(219,63,63,1);
+}
+.ol-zoom .ol-zoom-in {
+    border-radius: 50%;
+}
+.ol-zoom .ol-zoom-out {
+    border-radius: 50%;
+    top: 203px;
+    position: relative;
+}
+.ol-zoom {
+    background-color: rgba(255,255,255,0);
+}
+.ol-zoom:hover {
+    background-color: rgba(255,255,255,0);
+}
+.ol-overviewmap.ol-uncollapsible {
+    bottom: 2em;
+}
+.toolbar {
+    height: 2em;
+    display: table;
+    padding-left: .2em;
+}
+.toolbar .ol-control {
+    position: static;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
+}
+.toolbar .ol-control button {
+    border-radius: 2px;
+    background-color: rgba(219,63,63,.5);
+    width: 2em;
+    display: inline-block;
+}
+.toolbar .ol-control button:hover {
+    background-color: rgba(219,63,63,1);
 }

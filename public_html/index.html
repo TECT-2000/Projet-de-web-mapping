@@ -4,11 +4,18 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
         <link rel="stylesheet" href="style.css"/>
         <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-        <title>Projet de WebMApping</title>
+        <title>Projet de WebMapping</title>
     </head>
     <body>
         <h2>My Map avec deux couches : Administrative et hydrographie</h2>
+        <div id="layertree" class="layertree"></div>
         <div id="map" class="map"></div>
+        <br/>
+        <input type="checkbox" id="visible" checked > Administrative Layer
+        <input type="checkbox" id="dishes" checked > Dishes Layer
+        <div id="myposition"></div>
+        <div id="overlay"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="map.js"></script>
     </body>
 </html>

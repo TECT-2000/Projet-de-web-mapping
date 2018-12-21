@@ -1,0 +1,13 @@
+
+.map {
+    height: 1200px;
+    width: 100%;
+}
+.map{
+    border: 2px solid #c8a88e;
+    bottom: 2px;
+    left: 10;
+    min-width: 1024px;
+    position: absolute;
+    top: 0px;
+}

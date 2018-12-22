@@ -1,17 +1,10 @@
-body{
-    margin:0px;
-}
-.map {
-    height: 100%;
-    width: 100%;
+#vmap-world1 {
     background-color: green;
 }
-.map{
+#vmap-world1{
     border: 2px solid #c8a88e;
     bottom: 2px;
-    left: 10px;
-    position: absolute;
-    top: 120px;
+    position: relative;
 }
 .layertree {
     width: 20%;

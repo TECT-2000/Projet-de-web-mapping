@@ -1,21 +1,186 @@
 <!doctype html>
-<html lang="en">
-    <head>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta content="ie=edge" http-equiv="x-ua-compatible">
+	<title>Projet Webmapping</title>
+	<meta content="Luxury is a premium adman dashboard template based on bootstrap" name="description">
+	<meta content="width=device-width,initial-scale=1,user-scalable=0" name="viewport">
+	<!--<link href="apple-touch-icon.png" rel="apple-touch-icon">-->
+
+	<!-- site-wide styles -->
+	<link href="./public/stylesheets/bootstrap.css" rel="stylesheet">
+	<link href="./public/stylesheets/site.css" rel="stylesheet">
+	<link rel="stylesheet" href="./public/stylesheets/switchery.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="./public/stylesheets/style.css"/>
+
+	<!-- current page styles -->
+	<link href="./public/stylesheets/demos.css" rel="stylesheet">
+	<link href="./public/stylesheets/font-awesome.min.css" rel="stylesheet">
+	<link href="./public/stylesheets/material-design-iconic-font.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600" rel="stylesheet">
         <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-        <title>Projet de WebMapping</title>
-    </head>
-    <body>
-        <h2>My Map avec deux couches : Administrative et hydrographie</h2>
-        <div id="layertree" class="layertree"></div>
-        <div id="map" class="map"></div>
-        <br/>
-        <input type="checkbox" id="visible" checked > Administrative Layer
-        <input type="checkbox" id="dishes" checked > Dishes Layer
-        <div id="myposition"></div>
-        <div id="overlay"></div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="map.js"></script>
-    </body>
+	<script src="./public/javascripts/breakpoints.min.js"></script>
+	<script>Breakpoints({
+      xs: {min: 0, max: 575},
+      sm: {min: 576, max: 767},
+      md: {min: 768, max: 991},
+      lg: {min: 992, max: 1199},
+      xl: {min: 1200, max: Infinity}
+  });</script>
+</head>
+<body class="menubar-top menubar-light demo-examples">
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+	your browser</a> to improve your experience.</p>
+<![endif]-->
+<nav class="site-navbar navbar fixed-top navbar-expand-lg navbar-light bg-blue">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">
+			<span class="brand-name hidden-fold">Projet WebMapping</span>
+		</a>
+
+		<button class="navbar-toggler hidden-lg-up collapsed" data-toggle="navbar-search" type="button">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="zmdi zmdi-hc-lg zmdi-search"></span>
+		</button>
+
+		<button aria-expanded="false" class="navbar-toggler hidden-lg-up collapsed" data-target="#site-navbar-collapse"
+		        data-toggle="collapse" type="button">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="zmdi zmdi-hc-lg zmdi-more"></span>
+		</button>
+	</div><!-- /.navbar-header -->
+
+	<div class="collapse navbar-collapse" id="site-navbar-collapse">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<span>
+					ENSP 5GI - 2019
+				</span>
+			</li>
+		</ul>
+
+	</div><!-- /.collapse -->
+</nav><!-- /.site-navbar -->
+
+
+<header class="site-header">
+	<div class="jumbotron jumbotron-fluid">
+		<div class="jumbotron-text">
+			<h3 class="text-primary text-center">Bienvenue Sur Notre Plateforme Webmapping</h3>
+			<!--<small class="font-italic text-muted">Bootstrap 4 Web App Kit</small>-->
+		</div><!-- /.jumbotron-text -->
+
+	</div><!-- /.jumbotron -->
+
+	<div class="breadcrumb">
+		<ol class="breadcrumb-tree">
+			<li class="breadcrumb-item">
+				<a href="#">
+					<span class="zmdi zmdi-home mr-1"></span>
+					<span>Home</span>
+				</a>
+			</li>
+		</ol>
+
+		<!--	<ul class="breadcrumb-btns">
+				<li class="dropdown">
+					<a aria-expanded="false" aria-haspopup="true" class="btn btn-sm btn-scondary dropdown-toggle"
+						 data-toggle="dropdown" href="#">
+						<i class="zmdi zmdi-settings mr-1 text-success"></i>
+						<span class="mr-1">Settings</span>
+						<i class="zmdi zmdi-chevron-down"></i>
+					</a>
+					<div class="dropdown-menu p-0 mt-1" data-plugin="dropdownCaret">
+						<a class="dropdown-item dropdown-menu-cap">Your Settings</a>
+						<a class="dropdown-item" href="#">Edit Profile</a>
+						<a class="dropdown-item" href="#">Privacy Settings</a>
+						<a class="dropdown-item" href="#">Secuirty Settings</a>
+					</div>
+				</li>
+				<li>
+					<a class="btn btn-sm btn-scondary" href="#">
+						<i class="zmdi zmdi-headset-mic mr-1 text-success"></i>
+						<span>Support</span>
+					</a>
+				</li>
+				<li>
+					<a class="btn btn-sm btn-scondary" href="#">
+						<i class="zmdi zmdi-plus mr-1 text-success"></i>
+						<span>Add</span>
+					</a>
+				</li>
+			</ul>-->
+	</div><!-- /.breadcrumb -->
+</header><!-- /.site-header -->
+
+
+<main class="site-main">
+	<div class="site-content">
+		<div class="row">
+			<div class="col-lg-9 col-sm-9 col-md-9">
+				<div class="card">
+					<header class="card-header">
+						<h6 class="card-heading">Carte Cameroun</h6>
+					</header>
+					<div>
+						<div id="vmap-world1" style="width: 100%; height: 450px"></div>
+					</div>
+				</div><!-- /.card -->
+			</div><!-- /.col -->
+			<div class="col-lg-3 col-sm-3 col-md-3 h-100">
+				<div class="card">
+					<header class="card-header">Gestion des couches</header>
+					<div class="card-body">
+						<div>
+							<header>
+								<h6 class="text-primary text-center"> Liste des couches</h6>
+							</header>
+							<ul class="list-group-flush list-group">
+								<li class="list-group-item d-flex justify-content-between" style="padding-left: 0;padding-right0:0;">
+									<input type="checkbox" id="couche0" class="js-switch" checked />
+									<label for="couche0" style="font-size: medium">Couche 1</label>
+								</li>
+								<li class="list-group-item" style="padding-left: 0;padding-right: 0;">
+									<div class="checkbox checkbox-square checkbox-primary checkbox-lg">
+										<input id="couche1" type="checkbox">
+										<label for="couche1" style="font-size: medium">Couche 1</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<hr/>
+						<div class="row">
+							<div class="col-md-8 m-auto">
+								<button class="btn btn-outline-primary btn-block">
+									Ajouter Couche
+								</button>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.card -->
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div>
+</main><!-- /.site-main -->
+
+
+<footer class="site-footer">
+	<div class="mr-auto">
+		<p class="text-primary mb-0">Made By Groupe #</p>
+	</div>
+</footer><!-- /.site-footer -->
+
+
+<!-- core plugins -->
+<script src="./public/javascripts/jquery.min.js"></script>
+<script src="./public/javascripts/popper.min.js"></script>
+<script src="./public/javascripts/bootstrap.min.js"></script>
+<script src="./public/javascripts/jquery.waypoints.min.js"></script>
+<script src="./public/javascripts/switchery.js"></script>
+<script src="./public/javascripts/main.js"></script>
+<script src="./public/javascripts/map.js"></script>
+</body>
 </html>
